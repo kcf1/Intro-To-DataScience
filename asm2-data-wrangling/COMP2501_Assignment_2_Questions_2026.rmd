@@ -59,7 +59,7 @@ library(ggplot2)
 
 ```{r}
 data("airquality")
-head(airquality,5)
+#head(airquality,5)
 airquality_long <- airquality |>
   pivot_longer(c(Ozone,Solar.R,Wind,Temp),names_to = 'Measurement',values_to = 'Value') |>
   unite('Date',Month,Day,sep = '-')
@@ -121,7 +121,11 @@ poll_results |>
   ggplot(aes(x = clinton, y = avg_poll_clinton)) +
   geom_point(aes(col = state)) +
   geom_smooth(method = 'lm', se = FALSE) +
-  ggtitle('Actual Results vs Polling Predictions for Clinton')
+  ggtitle('Actual Results vs Polling Predictions for Clinton') +
+  theme(
+    legend.title = element_text(size = 5),
+    legend.text = element_text(size = 5)
+  )
 ```
 
 ### 4. (5 points) Scrape data from Wikipedia with the `rvest` package, and answer the following questions.
