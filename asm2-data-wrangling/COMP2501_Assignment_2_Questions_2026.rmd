@@ -105,8 +105,8 @@ state_polls <- polls_us_election_2016 |>
   filter(grade=='A'|grade=='A-') |>
   group_by(state) |>
   summarise(
-    avg_rawpoll_clinton = mean(rawpoll_clinton),
-    avg_rawpoll_trump = mean(rawpoll_trump)
+    avg_poll_clinton = mean(rawpoll_clinton),
+    avg_poll_trump = mean(rawpoll_trump)
   )
 head(state_polls,5)
 poll_results <- state_polls |>
@@ -117,8 +117,11 @@ head(poll_results,5)
 #### b. (3 points) Visualize the polling accuracy. 1). Use the `poll_results` data frame. 2). Create a scatter plot using `ggplot2`. 3). Put the actual `clinton` result on the x-axis and the `avg_poll_clinton` on the y-axis. 4). Color the points by `state`. 5). Add a smooth trend line using the linear model method to show the overall relationship. 6). Add a title "Actual Results vs Polling Predictions for Clinton" and add axis labels.
 
 ```{r}
-
-
+poll_results |>
+  ggplot(aes(x = clinton, y = avg_poll_clinton)) +
+  geom_point(aes(col = state)) +
+  geom_smooth(method = 'lm', se = FALSE) +
+  ggtitle('Actual Results vs Polling Predictions for Clinton')
 ```
 
 ### 4. (5 points) Scrape data from Wikipedia with the `rvest` package, and answer the following questions.
@@ -126,29 +129,64 @@ head(poll_results,5)
 #### a. (2 points) Choose a Wikipedia page of your interest (for example, "Data Science" in <https://en.wikipedia.org/wiki/Data_science>). Scrape the first paragraph from the Introduction section of that page. Store the scraped text in a variable and print it.
 
 ```{r}
-
-
+h <- read_html('https://en.wikipedia.org/wiki/Chiikawa') 
+p <- h |> 
+  html_elements('div') |>
+  html_elements('.mw-content-ltr') |>
+  html_elements('p')
+p_text <- p[2] |>
+  html_text()
+p_text
 ```
 
 #### b. (3 points) Visit the Wikipedia page of "Data Science" (<https://en.wikipedia.org/wiki/Data_science>), try to get the image URL of the image of "The existence of Comet NEOWISE". In your scarping you can have more than one URL, as long as the required URL is contained in the output. Please output the full image URL (starting with "<https://>") rather than the URL starting with "//".
 
 ```{r}
-
-
+h <- read_html('https://en.wikipedia.org/wiki/Data_science') 
+f <- h |> 
+  html_elements('div') |>
+  html_elements('.mw-content-ltr') |>
+  html_elements('figure')
+f_src <- f[1] |>
+  html_elements('img') |>
+  html_attr('src')
+f_src <- paste0('https:',f_src)
+f_src
 ```
 
 ### 5. (3 points) Use the `lubridate` package in R, parse the `date_time` column in the `date_data` and create new columns for standard `date` and `time` components, and print the final results.
 
 ```{r}
 date_data <- data.frame(date_time = c("2026-02-16 7:30:15", "2023-02-17 12:15:30", "2026-02-18 23:59:59"))
-
+date_df <- date_data |>
+  mutate(
+    date_time = ymd_hms(date_time)
+    ) |>
+  mutate(
+    date = date(date_time),
+    time = hms::as_hms(date_time)
+    #time = format(date_time,'%H:%M:%S')
+  )
+date_df
 ```
 
 ### 6. (3 points) Use the `stringr` package in R, perform the following tasks: 1) Extract all the phone numbers from the following text: "Please call us at 123-456-7890 or 555-555-5555." 2) Extract all the email addresses from the following text: "Contact us at [info\@example.com](mailto:info@example.com){.email} or [support\@example.com](mailto:support@example.com){.email}." 3) Replace all the URLs in the following text with the string "URL": "Check out our website at <https://www.example.com> and our blog at <https://blog.example.com>.". Print the corresponding results.
 
 ```{r}
+str1 <- 'Please call us at 123-456-7890 or 555-555-5555.'
+str2 <- 'Contact us at info@example.com or support@example.com.'
+str3 <- 'Check out our website at https://www.example.com and our blog at https://blog.example.com.'
 
+phone_numbers <- str1 |> 
+  str_extract_all('(\\d{3}-\\d{3}-\\d{4})')
 
+email_addresses <- str2 |>
+  str_extract_all('(\\w+@\\w+.com)')
+
+replace_urls <- str3 |> 
+  str_replace_all('(https://(\\w+.)+com)','URL')
+
+phone_numbers; email_addresses; replace_urls
 ```
 
 ### 7. (12 points) In this question, you will use the built‑in `stringr::sentences` vector.
@@ -157,27 +195,61 @@ date_data <- data.frame(date_time = c("2026-02-16 7:30:15", "2023-02-17 12:15:30
 sentences_vec <- stringr::sentences
 sentences_tbl <- tibble(id = seq_along(sentences_vec), text = sentences_vec)
 
+head(sentences_vec,5)
+head(sentences_tbl,5)
 ```
 
 #### a. (4 points) Using regex, create logical flags per sentence: 1) `has_number`: contains any digit (Arabic numerals); 2) `has_color`: contains a basic color word from the set `{red, blue, green, yellow, black, white}` (case‑insensitive); 3) `has_punct`: ends with '!' or '?'. Report counts of each flag (i.e. how many `TRUE`).
 
 ```{r}
-
-
+flags <- sentences_tbl |> 
+  mutate(
+    has_number = str_detect(text, '\\d'),
+    has_color = str_detect(text, '(red)|(blue)|(green)|(yellow)|(black)|(white)'),
+    has_punct = str_detect(text, '[!|?]$')
+  )
+flags_count <- flags |> 
+  select(has_number,has_color,has_punct) |> 
+  colSums()
+flags_count
 ```
 
 #### b. (4 points) 1) Tokenize `sentences_tbl` into one word per row (`unnest_tokens(word, text)` from `tidytext`). 2) Remove stop words using `tidytext::stop_words`. 3) Compute the top 15 most frequent words overall (in descending order) and plot a horizontal bar chart.
 
 ```{r}
+most_freq_words <- sentences_tbl |>
+  unnest_tokens(word,text) |>
+  filter(!word %in% tidytext::stop_words$word) |>
+  count(word) |>
+  arrange(desc(n)) |>
+  head(15)
 
-
+most_freq_words |> 
+  ggplot(aes(reorder(word,n),n)) +
+  geom_bar(stat = 'identity') +
+  coord_flip()
 ```
 
 #### c. (4 points) 1) Create bi‑grams (two‑word sequences) from the sentences. (Hint: `unnest_tokens(bigram, text, token = "ngrams", n = 2)`). 2) Remove bi‑grams where either token is a stop word. 3) Show the top 15 bigrams by count using a bar chart.
 
 ```{r}
-
-
+most_freq_bigrams <- sentences_tbl |>
+  unnest_tokens(bigram,text,token = 'ngrams',n = 2) |>
+  separate(bigram, c('g1','g2'), sep = ' ') |>
+  filter(
+    !(g1 %in% tidytext::stop_words$word | g2 %in% tidytext::stop_words$word)
+  ) |>
+  mutate(
+    bigram = paste(g1,g2)
+  ) |>
+  select(id,bigram) |>
+  count(bigram) |>
+  arrange(desc(n)) |>
+  head(15)
+most_freq_bigrams |> 
+  ggplot(aes(reorder(bigram,n),n)) +
+  geom_bar(stat = 'identity') +
+  coord_flip()
 ```
 
 ### 8. (12 points) In this question, you will analyze a classic public‑domain text named "Pride and Prejudice" from the `janeaustenr` package.
@@ -190,33 +262,43 @@ book_df <- prideprejudice %>%
   tibble(text = .) %>%
   mutate(line = row_number()) %>%
   select(line, text)
-
+head(book_df,5)
 ```
 
 #### a. (3 points) Clean the text and store it as `clean_df` by: 1) converting text to lowercase; 2) removing non‑alphabetic characters; and 3) removing blank or empty lines. Print the first 5 rows.
 
 ```{r}
-
-
+clean_df <- book_df |>
+  mutate(text = str_to_lower(text)) |>
+  mutate(text = str_replace_all(text,'[^a-zA-Z]+',' ')) |>
+  filter(str_detect(text,'\\w'))
+head(clean_df,5)
 ```
 
 #### b. (3 points) Tokenize the cleaned text into individual words using `unnest_tokens()`. Remove stop words using `stop_words` from `tidytext`. Store the result as `words_df`. Print the first 5 rows.
 
 ```{r}
-
-
+words_df <- clean_df |>
+  unnest_tokens(word,text) |>
+  filter(!word %in% tidytext::stop_words$word)
+head(words_df,5)
 ```
 
 #### c. (3 points) Compute word frequencies. Create a tibble `top20_words` containing the 20 most frequent words. Print the result.
 
 ```{r}
-
-
+top20_words <- words_df |>
+  count(word) |>
+  arrange(desc(n)) |>
+  head(20)
+top20_words
 ```
 
 #### d. (3 points) Create a horizontal bar plot of the top 20 most frequent words.
 
 ```{r}
-
-
+top20_words |>
+  ggplot(aes(reorder(word,n),n)) +
+  geom_bar(stat = 'identity') +
+  coord_flip()
 ```
