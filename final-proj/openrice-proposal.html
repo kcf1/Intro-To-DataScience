@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenRice Proposal</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      color: #1f2328;
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 24px;
+      background: #ffffff;
+    }
+    h1, h2, h3 {
+      line-height: 1.25;
+    }
+    .image-row {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      margin: 12px 0 20px;
+    }
+    img {
+      width: 180px;
+      height: auto;
+      border: 1px solid #d0d7de;
+      border-radius: 8px;
+      display: block;
+      margin: 0;
+    }
+    ul {
+      padding-left: 24px;
+    }
+    figure {
+      margin: 0;
+    }
+    p {
+      margin: 0 0 12px;
+    }
+  </style>
+</head>
+<body>
+<h1>COMP2501 Project Proposal</h1>
+<p><strong>Name:</strong> Kan Chi Fu</p>
+<p><strong>UID:</strong> 3035807902</p>
+<h1>Can You Trust OpenRice?</h1>
+<h2>1. Tentative Topic</h2>
+<ul>
+<li><strong>Can you trust OpenRice?</strong></li>
+<li>This project asks whether OpenRice is more positive than other platforms and whether some reviews may be fake.</li>
+</ul>
+<h2>2. Two Data Science Questions</h2>
+<ul>
+<li><strong>Question 1:</strong> Does OpenRice have systematically more positive reviews or ratings than Google for the same restaurants?</li>
+<li><strong>Question 2:</strong> Do OpenRice reviews show suspicious patterns that look like fake campaigns or bots?</li>
+<li>Possible signals include review bursts, repeated phrases, generic comments, many new accounts, or unusual reviewer clustering.</li>
+</ul>
+<h2>3. Why the Question Is Important</h2>
+<div class="image-row">
+<figure><img src="./IMG_3498.jpg" alt="OpenRice reference 1"></figure>
+<figure><img src="./IMG_3499.jpg" alt="OpenRice reference 2"></figure>
+<figure><img src="./IMG_3500.jpg" alt="OpenRice reference 3"></figure>
+</div>
+<ul>
+<li>There are public concerns that OpenRice may remove bad reviews while also profiting from ads and promotions.</li>
+<li>Customers may be misled by inflated ratings or filtered negative information.</li>
+<li>Small businesses may be harmed if fake campaigns or platform visibility create unfair competition.</li>
+</ul>
+<h2>4. Existing Work</h2>
+<ul>
+<li>Related research exists, but most of it focuses on larger global platforms rather than OpenRice itself.</li>
+<li><strong>Platform differences:</strong> Li and Hecht (2020) show that the same restaurant can receive different scores across platforms.</li>
+<li><strong>OpenRice-related work:</strong> Chik and Vasquez (2017) show that OpenRice&#x27;s design can shape review content.</li>
+<li><strong>Bot detection:</strong> Aljabri et al. (2023) review machine learning methods for finding bots through behavior and account patterns.</li>
+<li><strong>Textual analysis:</strong> Fernquist (2016) studies deceptive reviews with NLP, while Qiu, Zhang, and Huang (2013) provide tools for Chinese text.</li>
+</ul>
+<h2>5. Difficulties</h2>
+<ul>
+<li>Scraping may be blocked or limited.</li>
+<li>Fake reviews can look natural, especially in Chinese, so Chinese NLP tools or translation may be needed.</li>
+<li>Review patterns can change over time.</li>
+<li>The dataset may be too large, so recent data or only part of the restaurants may be sampled.</li>
+<li>Ratings may differ across platforms even with the same 5-star scale.</li>
+<li>Restaurants differ by cuisine, size, and customer base.</li>
+</ul>
+<h2>6. Data Availability</h2>
+<ul>
+<li>Data may be collected by scraping with a vibe-a-bot approach.</li>
+<li>Useful fields include restaurant name, rating, review text, timestamps, reviewer activity, and business features from OpenRice and Google.</li>
+</ul>
+</body>
+</html>
