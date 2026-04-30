@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lec13-17 Summaries</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; margin: 2rem auto; max-width: 900px; padding: 0 1rem; color: #111; }
+    h1, h2, h3 { line-height: 1.25; }
+    hr { margin: 2rem 0; border: 0; border-top: 1px solid #ddd; }
+    code { background: #f6f8fa; padding: 0.1rem 0.3rem; border-radius: 4px; }
+    pre { background: #f6f8fa; padding: 0.8rem; overflow-x: auto; border-radius: 6px; }
+  </style>
+</head>
+<body>
+<h1>Lec13-17 Summaries</h1>
+
+<hr>
+
+<h1>Lec13 Summary: Probability</h1>
+
+<h2>What this lecture covers</h2>
+<ul>
+<li>Probability and random numbers</li>
+<li>Discrete probability</li>
+<li>Independence and conditional probability</li>
+<li>Continuous probability, expected value, and variance</li>
+<li>Law of Large Numbers (LLN) and Central Limit Theorem (CLT)</li>
+<li>Bank loan risk case study</li>
+<li>Markov vs Nekrasov debate</li>
+
+</ul>
+<h2>1) Probability and randomness</h2>
+<ul>
+<li>Probability quantifies uncertainty and can be interpreted as long-run frequency or degree of belief.</li>
+<li>Monte Carlo simulation estimates unknown quantities via repeated random sampling (example: estimating pi).</li>
+<li>In practice, computers use pseudo-random number generators (PRNGs): same seed gives reproducible sequences.</li>
+<li>True randomness usually comes from physical processes (thermal noise, quantum effects), but is throughput-limited.</li>
+
+</ul>
+<h2>2) Discrete probability basics</h2>
+<ul>
+<li>Sample space `Omega`: all possible outcomes; event `A`: subset of outcomes.</li>
+<li>Core properties include:</li>
+<li>`P(Omega) = 1`</li>
+<li>`P(A) &gt;= 0`</li>
+<li>`P(not A) = 1 - P(A)`</li>
+<li>`P(A union B) &lt;= P(A) + P(B)`</li>
+<li>`P(A and B) &lt;= min(P(A), P(B))`</li>
+<li>Card and bead examples are used to build intuition on counting outcomes.</li>
+
+</ul>
+<h2>3) Independence and conditional probability</h2>
+<ul>
+<li>Two events are independent if one does not change the probability of the other.</li>
+<li>Conditional probability:</li>
+<li>`P(A|B) = P(A and B) / P(B)`</li>
+<li>Independence equivalences:</li>
+<li>`P(A and B) = P(A)P(B)`</li>
+<li>`P(A|B) = P(A)`</li>
+<li>The lecture highlights common mistakes (e.g., gambler&#x27;s fallacy, assuming big samples are always unbiased).</li>
+
+</ul>
+<h2>4) Combinations, permutations, and simulation</h2>
+<ul>
+<li>Use permutations when order matters; combinations when order does not.</li>
+<li>Poker/blackjack examples show exact probability computation and conditional reasoning.</li>
+<li>Monte Carlo is useful when exact counting is difficult, but experiment size and assumptions still matter.</li>
+
+</ul>
+<h2>5) Continuous probability</h2>
+<ul>
+<li>For continuous random variables, exact-point probability is zero (`P(X = x) = 0`).</li>
+<li>Probability is assigned to intervals (e.g., `P(a &lt;= X &lt;= b)`).</li>
+<li>eCDF/CDF represent cumulative probability behavior; PDF describes density.</li>
+<li>Normal distribution is introduced with R tooling (`pnorm`, `rnorm`), plus note that many other distributions exist.</li>
+
+</ul>
+<h2>6) Expected value and variance</h2>
+<ul>
+<li>Expected value `E(X)` is the long-run average outcome.</li>
+<li>Variance and standard deviation measure spread/risk.</li>
+<li>For i.i.d. samples:</li>
+<li>Mean of sample mean equals population mean.</li>
+<li>Variance of sample mean decreases with `n` (standard error scales like `1/sqrt(n)`).</li>
+<li>LLN: sample averages converge to expected value as sample size grows.</li>
+
+</ul>
+<h2>7) Central Limit Theorem (CLT)</h2>
+<ul>
+<li>For many distributions with finite mean/variance, sample mean is approximately normal for large `n`.</li>
+<li>CLT explains why averages often look &quot;normal&quot; even if raw data is not.</li>
+<li>Requires assumptions (especially i.i.d.) in the standard form taught here.</li>
+
+</ul>
+<h2>8) Case study: bank loans</h2>
+<ul>
+<li>Each loan return is modeled as a random variable under default/no-default outcomes.</li>
+<li>Monte Carlo shows distribution of average return across many loans.</li>
+<li>Key insights:</li>
+<li>Raising interest rate can shift expected return positive.</li>
+<li>To reduce loss probability, either increase margin or portfolio size (`n`) to reduce standard error.</li>
+<li>Results are very sensitive to assumptions (default rate, independence, macro conditions).</li>
+<li>Important realism checks: correlated defaults, recessions, feedback loops (higher rates can raise default risk), and hidden systemic risk.</li>
+
+</ul>
+<h2>9) Markov vs Nekrasov debate</h2>
+<ul>
+<li>Nekrasov argued independence is necessary for LLN/CLT behavior.</li>
+<li>Markov gave counterexamples with dependent observations and developed ideas leading to Markov chains.</li>
+<li>Big takeaway: dependence structures matter; useful probabilistic behavior can still emerge without full independence.</li>
+<li>Modern relevance: Markov chains, Monte Carlo, PageRank, HMMs, MDPs, and language modeling.</li>
+
+</ul>
+<h2>Final takeaway</h2>
+<p>The lecture connects probability theory to data science practice: model uncertainty, simulate when exact math is hard, check assumptions behind LLN/CLT, and stress-test real-world decisions (like lending) against dependence and changing environments.</p>
+
+<hr>
+
+<h1>Lec14 Summary: Statistical Inference</h1>
+
+<h2>What this lecture is about</h2>
+<ul>
+<li>Statistical inference helps distinguish real signal from random chance.</li>
+<li>Polling is used as the motivating example: estimate population opinion from a sample.</li>
+<li>Main topics: standard deviation vs standard error, confidence intervals, power, and p-values.</li>
+
+</ul>
+<h2>Polling as a sampling model</h2>
+<ul>
+<li>Let `p` be the proportion supporting one side (e.g., blue beads/candidate A).</li>
+<li>Opposing proportion is `1 - p`.</li>
+<li>Spread is `p - (1 - p) = 2p - 1`.</li>
+<li>Different polls give different estimates because of sampling variability.</li>
+<li>Larger sample sizes produce tighter estimate distributions (less uncertainty).</li>
+
+</ul>
+<h2>Standard deviation vs standard error</h2>
+<ul>
+<li>**Standard deviation (SD):** spread of observations within one dataset.</li>
+<li>**Standard error (SE):** spread of a statistic (usually the sample mean/proportion) across repeated samples.</li>
+<li>For a sample mean: `SE = s / sqrt(N)`.</li>
+<li>For a proportion: `SE = sqrt(p(1-p)/N)`.</li>
+<li>As `N` increases, SE decreases roughly at rate `1/sqrt(N)`.</li>
+
+</ul>
+<h2>Confidence intervals (CI) and margin of error (MoE)</h2>
+<ul>
+<li>A confidence interval gives a range of plausible values for the true parameter under repeated sampling.</li>
+<li>Under normal approximation:</li>
+<li>About 68% CI: estimate +/- 1 SE</li>
+<li>About 95% CI: estimate +/- 1.96 SE (often approximated as +/- 2 SE)</li>
+<li>About 99.7% CI: estimate +/- 3 SE</li>
+<li>In polling, margin of error is typically tied to a 95% CI and often approximated by `~2 x SE`.</li>
+<li>Narrower CI means more precise estimates.</li>
+
+</ul>
+<h2>Power</h2>
+<ul>
+<li>**Power** is the probability of detecting a real non-zero effect (e.g., spread not equal to 0).</li>
+<li>Low sample size can produce CIs that include 0 even when a real difference exists.</li>
+<li>This can create &quot;toss-up&quot; conclusions due to insufficient data, not necessarily because reality is close.</li>
+<li>Increasing sample size increases power by reducing SE.</li>
+
+</ul>
+<h2>p-values and hypothesis testing</h2>
+<ul>
+<li>Set a null hypothesis (e.g., `p = 0.5`, no difference).</li>
+<li>Compute a test statistic (z-score) measuring distance from null in SE units.</li>
+<li>**p-value:** probability of observing a result at least as extreme as the data, assuming the null is true.</li>
+<li>Typical conventions:</li>
+<li>`p &lt;= 0.05`: statistically unlikely under null</li>
+<li>`p &lt;= 0.01`: very unlikely under null</li>
+
+</ul>
+<h2>Chi-square example (categorical comparison)</h2>
+<ul>
+<li>For two-way categorical outcomes (e.g., success/failure by gender), use a chi-square test.</li>
+<li>It compares observed counts to expected counts under &quot;no association&quot;.</li>
+<li>Output is a p-value for whether differences are likely due to chance.</li>
+
+</ul>
+<h2>Important cautions</h2>
+<ul>
+<li>Small p-values do not imply large practical effects.</li>
+<li>With very large samples, tiny effects can become statistically significant.</li>
+<li>Always interpret p-values together with effect size and domain relevance.</li>
+<li>Large datasets can still mislead when systematic bias/confounding exists.</li>
+
+</ul>
+<h2>Bottom line</h2>
+<ul>
+<li>Inference quantifies uncertainty, not certainty.</li>
+<li>SE and CI quantify precision; power quantifies detectability; p-values quantify compatibility with null assumptions.</li>
+<li>Good data science practice combines statistical significance, effect size, study design quality, and bias checks.</li>
+
+</ul>
+<hr>
+
+<h1>Lec15 Summary: Bayes&#x27; Theorem</h1>
+
+<h2>Core idea</h2>
+
+<p>Bayes&#x27; theorem updates the probability of a hypothesis after seeing evidence:</p>
+
+<p>\[</p>
+<p>P(A \mid B) = \frac{P(B \mid A)\,P(A)}{P(B)}</p>
+<p>\]</p>
+
+<ul>
+<li>`P(A)` is the prior probability (belief before seeing data).</li>
+<li>`P(B|A)` is the likelihood (how likely evidence is if the hypothesis is true).</li>
+<li>`P(B)` is the evidence (overall chance of observing the data).</li>
+<li>`P(A|B)` is the posterior probability (updated belief after seeing data).</li>
+
+</ul>
+<h2>Intuition from Lego example</h2>
+
+<p>The lecture uses colored Lego pegs to explain conditional probability:</p>
+
+<ul>
+<li>Total pegs: 192</li>
+<li>White pegs: 64, so `P(white) = 64/192 = 0.33`</li>
+<li>Blue pegs: 128, so `P(blue) = 128/192 = 0.67`</li>
+<li>Black pegs: 8 total, but these are distributed across white/blue regions</li>
+
+</ul>
+<p>Key point: probabilities must be conditioned on context.</p>
+
+<ul>
+<li>`P(black|blue) = 2/128 = 0.015625`</li>
+<li>`P(black|white) = 6/64 = 0.09375`</li>
+<li>`P(blue|black) = 2/8 = 0.25`</li>
+
+</ul>
+<p>Using Bayes:</p>
+
+<ul>
+<li>`P(black|white) = P(white|black) * P(black) / P(white)`</li>
+<li>`P(white|black) = P(black|white) * P(white) / P(black)`</li>
+
+</ul>
+<p>This shows how to move between &quot;probability of reality given observation&quot; and</p>
+<p>&quot;probability of observation given reality.&quot;</p>
+
+<h2>Why Bayes matters</h2>
+
+<p>Bayes&#x27; theorem is powerful when intuition fails in complex settings. Applications mentioned:</p>
+
+<ul>
+<li>Email spam detection</li>
+<li>Disease risk assessment from test results</li>
+<li>Driverless car decision making</li>
+<li>Voice recognition</li>
+<li>Text autocompletion</li>
+<li>Finance and machine learning more broadly</li>
+
+</ul>
+<h2>COVID test example (base-rate effect)</h2>
+
+<p>Even with a 99% accurate test, if disease prevalence is very low (1 in 4,000),</p>
+<p>the probability of truly having disease after a positive test can still be low.</p>
+
+<p>In the lecture&#x27;s calculation:</p>
+
+<ul>
+<li>`P(Disease | Positive) ~= 0.024` (about 2.4%)</li>
+
+</ul>
+<p>Takeaway: high test accuracy does not automatically imply a high posterior</p>
+<p>probability when the condition is rare. Prevalence (base rate) strongly affects</p>
+<p>the posterior.</p>
+
+<h2>Monte Carlo simulation insight</h2>
+
+<p>A simulation with 100,000 people illustrates why:</p>
+
+<ul>
+<li>There are far more healthy individuals than diseased individuals.</li>
+<li>Even a small false positive rate can create many false positives.</li>
+<li>Among all positive tests, many are false positives when prevalence is low.</li>
+
+</ul>
+<p>Repeated simulation converges to the analytical Bayes result (~0.024).</p>
+
+<h2>Practical interpretation reminders</h2>
+
+<ul>
+<li>Bayesian thinking combines prior reality with new observations.</li>
+<li>Different people can reach different posteriors if priors differ.</li>
+<li>Good data interpretation requires distinguishing:</li>
+<li>`P(reality | observation)` from</li>
+<li>`P(observation | reality)`</li>
+
+</ul>
+<h2>Suggested further reading from lecture</h2>
+
+<ul>
+<li>*Introduction to Data Science* materials (Bayes chapters/background)</li>
+<li>*Everything is Predictable* (Bayesian statistics introduction)</li>
+<li>Additional online Bayes intuition resources linked in class slides</li>
+
+</ul>
+<hr>
+
+<h1>Lec16 Summary: Regression</h1>
+
+<h2>Core idea</h2>
+<p>Lecture 16 introduces **regression** as a way to model relationships between variables and make predictions, using the classic father-son height example from Francis Galton.</p>
+
+<h2>Key concepts</h2>
+<ul>
+<li>**Correlation (`rho`)** measures how two variables move together using standardized values.</li>
+<li>`rho` ranges from `-1` to `1`:</li>
+<li>positive: variables tend to increase together</li>
+<li>negative: one tends to decrease when the other increases</li>
+<li>near zero: weak/no linear relationship</li>
+<li>Correlation is useful but incomplete; different-shaped datasets can share similar correlation values.</li>
+<li>Always inspect relationships visually (e.g., scatter plots), and consider alternatives like **Spearman rank correlation** when appropriate.</li>
+
+</ul>
+<h2>Regression line</h2>
+<ul>
+<li>Linear regression predicts `Y` from `X` with:</li>
+<li>`y = b + mx`</li>
+<li>slope `m = rho * (sigma_y / sigma_x)`</li>
+<li>intercept `b = mu_y - m * mu_x`</li>
+<li>In standardized units, the regression slope equals `rho`.</li>
+<li>Regression to the mean: predictions are pulled toward the average unless correlation is perfect.</li>
+<li>Regression is directional:</li>
+<li>predicting son from father is not the same as predicting father from son.</li>
+
+</ul>
+<h2>Prediction and variance</h2>
+<ul>
+<li>Compared with stratified averaging, the regression line gives more stable predictions in small samples.</li>
+<li>A fuller model includes residual error:</li>
+<li>`y = b + mx + epsilon`</li>
+<li>The explained proportion of variance is `rho^2`:</li>
+<li>with `rho ~= 0.5`, father height explains about `25%` of son-height variation.</li>
+
+</ul>
+<h2>Causation warnings</h2>
+<p>Lecture emphasis: **association is not causation**.</p>
+
+<p>Main pitfalls:</p>
+<ul>
+<li>**Spurious correlation / data dredging**: high correlations can appear by chance when searching many variable pairs.</li>
+<li>**Outliers**: one extreme point can create a misleadingly strong correlation.</li>
+<li>**Reverse causality**: cause/effect direction can be incorrectly flipped.</li>
+<li>**Confounding**: a third variable affects both `X` and `Y`, creating misleading associations.</li>
+
+</ul>
+<h2>Confounders and Simpson&#x27;s paradox</h2>
+<ul>
+<li>UC Berkeley admissions example: aggregate data suggested gender bias, but stratifying by major changed conclusions.</li>
+<li>This illustrates **Simpson&#x27;s paradox**: overall trend can reverse within subgroups.</li>
+<li>Proper stratification/conditioning is essential before interpretation.</li>
+
+</ul>
+<h2>Toward causal conclusions</h2>
+<ul>
+<li>**Randomized Controlled Trials (RCTs)** are the gold standard for causal claims because randomization balances confounders.</li>
+<li>Observational studies can mislead (example: hormone replacement therapy and cardiovascular risk), while later RCTs revealed opposite effects.</li>
+<li>Other causal strategies mentioned: twins studies, difference-in-differences, propensity score matching, and graphical models.</li>
+
+</ul>
+<h2>Takeaways</h2>
+<ul>
+<li>Use correlation and regression for **association and prediction**, not automatic causal claims.</li>
+<li>Check plots, outliers, subgroup structure, and possible confounders before interpreting results.</li>
+<li>Prefer randomized or robust causal-inference designs when the goal is causation.</li>
+
+</ul>
+<hr>
+
+<h1>Lec17 Summary - Introduction to Machine Learning</h1>
+
+<h2>Main topics</h2>
+<ul>
+<li>Machine learning notation and problem setup</li>
+<li>Evaluation metrics and why accuracy alone can mislead</li>
+<li>Decision boundaries and model flexibility</li>
+<li>Practical workflows using `caret` in R</li>
+<li>Common model families and tool choices in practice</li>
+
+</ul>
+<h2>1) Core notation and learning goals</h2>
+<ul>
+<li>`X` = observed input features (e.g., image pixels, text, lab values).</li>
+<li>`Y` = target outcome (class label or continuous value).</li>
+<li>`P(Y|X)` is **discriminative modeling** (predict label from features), used in classification/regression tasks.</li>
+<li>`P(X|Y)` is **generative modeling** (model data distribution conditioned on class).</li>
+<li>`P(X)` is unconditional modeling (e.g., language modeling, anomaly detection).</li>
+<li>If `Y` is categorical: classification (binary if 2 classes).</li>
+</ul>
+<p>If `Y` is continuous: regression.</p>
+
+<h2>2) Evaluation: what &quot;good model&quot; means</h2>
+<ul>
+<li>Data must be split into **training set** and **test set**.</li>
+<li>Test data must not be used for model selection/tuning.</li>
+<li>Accuracy is intuitive but can be deceptive under class imbalance.</li>
+
+</ul>
+<h3>Confusion-matrix-based metrics</h3>
+<ul>
+<li>**Sensitivity / Recall / TPR** = `TP / (TP + FN)`</li>
+</ul>
+<p>(How many actual positives are found?)</p>
+<ul>
+<li>**Specificity / TNR** = `TN / (TN + FP)`</li>
+</ul>
+<p>(How many actual negatives are correctly rejected?)</p>
+<ul>
+<li>**Precision / PPV** = `TP / (TP + FP)`</li>
+</ul>
+<p>(How many predicted positives are truly positive?)</p>
+<ul>
+<li>**Accuracy** = `(TP + TN) / (P + N)`</li>
+<li>**F1-score** = harmonic mean of precision and recall; useful for balancing both.</li>
+
+</ul>
+<h3>Thresholding and ROC</h3>
+<ul>
+<li>Different classification cutoffs change sensitivity/specificity trade-offs.</li>
+<li>ROC curve plots `TPR` vs `FPR = 1 - specificity`.</li>
+<li>**AUC** summarizes ranking/classification quality across all thresholds.</li>
+
+</ul>
+<h3>Loss functions</h3>
+<ul>
+<li>For continuous outcomes, use loss functions such as **MSE**.</li>
+<li>For binary classification with hard 0/1 predictions, MSE relates closely to `1 - accuracy`.</li>
+<li>For multi-class classification, softmax + classification losses are commonly used.</li>
+
+</ul>
+<h2>3) Decision boundary intuition (MNIST 2 vs 7 case study)</h2>
+<ul>
+<li>Even simple engineered features can separate classes somewhat.</li>
+<li>Linear regression creates a **linear/planar boundary**, which may underfit nonlinear patterns.</li>
+<li>When true class structure is nonlinear, need more flexible models (e.g., kNN, trees, kernels, neural nets).</li>
+
+</ul>
+<h2>4) Practical modeling workflow (R `caret`)</h2>
+<ul>
+<li>`train()` gives a common interface for many algorithms.</li>
+<li>`predict()` applies trained models consistently.</li>
+<li>Built-in cross-validation supports hyperparameter tuning (e.g., choosing `k` in kNN).</li>
+<li>Compare models on held-out test data, not only training/CV performance.</li>
+
+</ul>
+<h2>5) Preprocessing and compute-aware practice</h2>
+<ul>
+<li>Remove near-zero-variance features and standardize/transform as needed.</li>
+<li>Feature filtering can shrink dimensionality significantly (example: many MNIST pixels are uninformative).</li>
+<li>Run small pilot experiments first to estimate runtime before full-scale training.</li>
+
+</ul>
+<h2>6) What to use in practice</h2>
+<ul>
+<li>Supervised model families mentioned:</li>
+<li>Linear/logistic models (+ regularization: lasso, ridge, elastic net)</li>
+<li>Tree-based models (random forest, gradient boosting/XGBoost)</li>
+<li>SVM</li>
+<li>kNN</li>
+<li>Neural networks</li>
+<li>Broader paradigms: unsupervised, semi-supervised, self-supervised, weakly supervised, meta-learning, reinforcement learning.</li>
+<li>Common ecosystems:</li>
+<li>Python: `scikit-learn`, `xgboost`, `pytorch`/`tensorflow`/`keras`, `transformers`</li>
+<li>R: `caret`, `torch` (and Python interop when needed)</li>
+
+</ul>
+<h2>Takeaway</h2>
+<p>The lecture emphasizes that ML is not just fitting models: it is defining the right objective, using unbiased evaluation (beyond raw accuracy), understanding boundary/representation limits, and selecting practical tools and workflows that balance performance with compute constraints.</p>
+</body>
+</html>
