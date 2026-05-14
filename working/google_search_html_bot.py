@@ -1,16 +1,17 @@
 #!/usr/bin/env python3
 """
-Save search-result HTML for restaurant names.
+Save Google web-search HTML for restaurant names (Chrome).
 
-Engines:
-  google        — real Chrome via undetected-chromedriver when available (recommended).
-                  Plain Selenium is easy for Google to block with a reCAPTCHA page; see below.
-  duckduckgo    — POST to DuckDuckGo’s lightweight HTML endpoint (no browser; usually no CAPTCHA).
+Use this when you need Google’s own results (e.g. links to Google Maps / review pages).
+DuckDuckGo is not used: it does not expose Google’s review UI or the same result set.
 
 Blocked Google pages (\"unusual traffic\" / reCAPTCHA) are not written as the main .html file;
-instead a .blocked.html sidecar is written and the run reports an error for that name.
+instead a .blocked.html sidecar is written and the run reports BLOCKED for that name.
 
-Requires: Chrome for --engine google; `pip install -r requirements-selenium-google.txt`
+Requires: Chrome; `pip install -r requirements-selenium-google.txt` (undetected-chromedriver recommended).
+
+By default the browser window is visible and the script waits ~5s after each results page loads
+(`--settle`); use `--headless` only if you explicitly want no window.
 """
 
 from __future__ import annotations
@@ -18,14 +19,11 @@ from __future__ import annotations
 import argparse
 import csv
 import random
-import ssl
 import sys
 import time
 from pathlib import Path
 from typing import Any
-from urllib.error import HTTPError, URLError
-from urllib.parse import quote_plus, urlencode
-from urllib.request import Request, urlopen
+from urllib.parse import quote_plus
 
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
@@ -97,6 +95,8 @@ def build_driver_google(headless: bool, user_data_dir: Path | None) -> Any:
         opts = uc.ChromeOptions()
         opts.add_argument("--window-size=1400,900")
         opts.add_argument("--lang=en-GB")
+        if not headless:
+            opts.add_argument("--start-maximized")
         if headless:
             opts.add_argument("--headless=new")
         if user_data_dir is not None:
@@ -113,6 +113,8 @@ def build_driver_google(headless: bool, user_data_dir: Path | None) -> Any:
         print(f"WARN: undetected_chromedriver not importable ({e}); using stock Chrome.", file=sys.stderr)
 
     opts = Options()
+    if not headless:
+        opts.add_argument("--start-maximized")
     if headless:
         opts.add_argument("--headless=new")
     opts.add_argument("--disable-gpu")
@@ -148,7 +150,7 @@ def fetch_html_google(driver: Any, query: str, settle_s: float) -> tuple[str, st
     time.sleep(0.8 + random.random() * 0.5)
     try_click_consent(driver)
     driver.get(url)
-    time.sleep(min(settle_s, 2.0))
+    time.sleep(max(0.0, settle_s))
     try_click_consent(driver)
     state = google_serp_ready(driver, timeout=25.0)
     html = driver.page_source
@@ -157,33 +159,6 @@ def fetch_html_google(driver: Any, query: str, settle_s: float) -> tuple[str, st
     if state == "blocked" or is_google_blocked(html):
         return "blocked", html
     return "timeout", html
-
-
-def fetch_html_duckduckgo(query: str) -> str:
-    """DuckDuckGo HTML search (POST). Returns HTML; raises on HTTP errors."""
-    data = urlencode({"q": query, "b": ""}).encode("utf-8")
-    req = Request(
-        "https://html.duckduckgo.com/html/",
-        data=data,
-        headers={
-            "User-Agent": (
-                "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
-                "(KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
-            ),
-            "Content-Type": "application/x-www-form-urlencoded",
-            "Accept": "text/html",
-            "Referer": "https://html.duckduckgo.com/",
-        },
-        method="POST",
-    )
-    ctx = ssl.create_default_context()
-    with urlopen(req, context=ctx, timeout=45) as resp:
-        return resp.read().decode("utf-8", errors="replace")
-
-
-def ddg_looks_like_results(html: str) -> bool:
-    low = html.lower()
-    return "result__a" in low or "result__snippet" in low or "no results found" in low
 
 
 def names_from_csv(path: Path, column: str, limit: int | None) -> list[str]:
@@ -202,7 +177,7 @@ def names_from_csv(path: Path, column: str, limit: int | None) -> list[str]:
 
 
 def main() -> None:
-    p = argparse.ArgumentParser(description="Save search HTML for restaurant name queries.")
+    p = argparse.ArgumentParser(description="Save Google search HTML for restaurant name queries.")
     p.add_argument("names", nargs="*", help="Restaurant names (if not using --from-csv).")
     p.add_argument("--from-csv", type=Path, metavar="PATH", help="Read names from CSV.")
     p.add_argument("--csv-column", default="name", help="Column for --from-csv.")
@@ -218,24 +193,28 @@ def main() -> None:
         default=" restaurant Hong Kong",
         help="Appended to each name for the query.",
     )
-    p.add_argument("--delay-min", type=float, default=3.0, help="Min seconds between Google fetches.")
-    p.add_argument("--delay-max", type=float, default=6.0, help="Max seconds between Google fetches.")
     p.add_argument(
-        "--headless",
-        action="store_true",
-        help="Headless Chrome for Google (more likely to get CAPTCHA; omit for best results).",
+        "--delay-min",
+        type=float,
+        default=5.0,
+        help="Min seconds between restaurant queries (after saving HTML).",
     )
     p.add_argument(
-        "--engine",
-        choices=("google", "duckduckgo"),
-        default="google",
-        help="google=Chrome (use undetected-chromedriver); duckduckgo=HTML POST, no browser.",
+        "--delay-max",
+        type=float,
+        default=7.0,
+        help="Max seconds between restaurant queries (after saving HTML).",
     )
     p.add_argument(
         "--settle",
         type=float,
-        default=2.5,
-        help="Extra seconds after navigation before checking Google SERP.",
+        default=5.0,
+        help="Seconds to wait after opening the Google results URL so the page can load.",
+    )
+    p.add_argument(
+        "--headless",
+        action="store_true",
+        help="Run Chrome without a window (default: visible browser). More likely to hit CAPTCHA.",
     )
     p.add_argument(
         "--user-data-dir",
@@ -263,15 +242,12 @@ def main() -> None:
         for name in names:
             q = (name + args.query_suffix).strip()
             fn = safe_filename(name) + ".html"
-            if args.engine == "google":
-                print(f"{fn}\t{google_search_url(q)}")
-            else:
-                print(f"{fn}\tduckduckgo POST q={q!r}")
+            print(f"{fn}\t{google_search_url(q)}")
         return
 
-    driver: Any | None = None
-    if args.engine == "google":
-        driver = build_driver_google(args.headless, args.user_data_dir)
+    driver = build_driver_google(args.headless, args.user_data_dir)
+    if not args.headless:
+        print("Chrome: visible window (default). Use --headless to hide it.", flush=True)
 
     try:
         last = len(names) - 1
@@ -285,51 +261,33 @@ def main() -> None:
                 continue
 
             q = (name + args.query_suffix).strip()
-            print(f"[{i + 1}/{len(names)}] {args.engine} {name!r}", flush=True)
+            print(f"[{i + 1}/{len(names)}] google {name!r}", flush=True)
 
-            if args.engine == "duckduckgo":
-                try:
-                    html = fetch_html_duckduckgo(query=q)
-                except (HTTPError, URLError, OSError) as e:
-                    print(f"ERROR {name!r}: {e}", file=sys.stderr, flush=True)
-                    continue
-                if not ddg_looks_like_results(html):
-                    print(
-                        f"WARN {name!r}: response does not look like DDG results; saving anyway.",
-                        file=sys.stderr,
-                        flush=True,
-                    )
+            try:
+                status, html = fetch_html_google(driver, q, args.settle)
+            except Exception as e:
+                print(f"ERROR {name!r}: {e}", file=sys.stderr, flush=True)
+                continue
+
+            if status == "ok":
                 out_path.write_text(html, encoding="utf-8")
+                if blocked_path.exists():
+                    blocked_path.unlink(missing_ok=True)
                 print(f"  wrote {out_path} ({len(html)} bytes)", flush=True)
-
             else:
-                assert driver is not None
-                try:
-                    status, html = fetch_html_google(driver, q, args.settle)
-                except Exception as e:
-                    print(f"ERROR {name!r}: {e}", file=sys.stderr, flush=True)
-                    continue
+                blocked_path.write_text(html, encoding="utf-8")
+                print(
+                    f"  BLOCKED ({status}) — wrote {blocked_path.name}. "
+                    "Try: do not pass --headless (visible Chrome is default), use --user-data-dir with a logged-in profile, "
+                    "or install undetected-chromedriver.",
+                    file=sys.stderr,
+                    flush=True,
+                )
 
-                if status == "ok":
-                    out_path.write_text(html, encoding="utf-8")
-                    if blocked_path.exists():
-                        blocked_path.unlink(missing_ok=True)
-                    print(f"  wrote {out_path} ({len(html)} bytes)", flush=True)
-                else:
-                    blocked_path.write_text(html, encoding="utf-8")
-                    print(
-                        f"  BLOCKED ({status}) — wrote {blocked_path.name}. "
-                        "Try: run without --headless, install undetected-chromedriver, "
-                        "or use --engine duckduckgo.",
-                        file=sys.stderr,
-                        flush=True,
-                    )
-
-            if args.engine == "google" and i < last:
+            if i < last:
                 time.sleep(random.uniform(args.delay_min, args.delay_max))
     finally:
-        if driver is not None:
-            driver.quit()
+        driver.quit()
 
 
 if __name__ == "__main__":
