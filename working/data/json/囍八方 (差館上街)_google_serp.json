@@ -11,9 +11,14 @@
     "url": "https://www.openrice.com/zh/hongkong/r-%E5%9B%8D%E5%85%AB%E6%96%B9-%E4%B8%8A%E7%92%B0-%E7%B2%B5%E8%8F%9C-%E5%BB%A3%E6%9D%B1-%E9%9B%B2%E5%90%9E-%E9%A4%83%E5%AD%90-r676570/"
   },
   "google_local_knowledge_panel": {
-    "found": false,
-    "reason": "Saved HTML is DuckDuckGo search output, not a Google Search results page. The Google local knowledge panel (star rating and Google review count) is not present in this file.",
-    "detected_source": "duckduckgo_html"
+    "name": "囍八方",
+    "rating": 4.3,
+    "rating_out_of": 5,
+    "review_count": 215,
+    "category": "Dumpling restaurant",
+    "price_range_text": "$50–100",
+    "hours_status": null,
+    "place_fid": "0x3404012a5a727fc5:0x7cdbf24dbc6e421f"
   },
   "comparison_notes": {
     "openrice_smile_cry": "Counts of positive vs negative reaction votes on OpenRice.",

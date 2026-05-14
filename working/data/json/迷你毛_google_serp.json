@@ -11,9 +11,14 @@
     "url": "https://www.openrice.com/zh/hongkong/r-%E8%BF%B7%E4%BD%A0%E6%AF%9B-%E6%B7%B1%E6%B0%B4%E5%9F%97-%E8%A5%BF%E5%BC%8F-all-day-breakfast-r700414/"
   },
   "google_local_knowledge_panel": {
-    "found": false,
-    "reason": "Saved HTML is DuckDuckGo search output, not a Google Search results page. The Google local knowledge panel (star rating and Google review count) is not present in this file.",
-    "detected_source": "duckduckgo_html"
+    "name": "迷你毛",
+    "rating": 3.9,
+    "rating_out_of": 5,
+    "review_count": 365,
+    "category": "Cafe",
+    "price_range_text": null,
+    "hours_status": null,
+    "place_fid": "0x3404010e27a3d057:0x36fc214f00d1829e"
   },
   "comparison_notes": {
     "openrice_smile_cry": "Counts of positive vs negative reaction votes on OpenRice.",

@@ -11,9 +11,14 @@
     "url": "https://www.openrice.com/zh/hongkong/r-%E5%90%88%E9%BB%9E%E5%A3%BD%E5%8F%B8-%E9%8A%85%E9%91%BC%E7%81%A3-%E6%97%A5%E6%9C%AC%E8%8F%9C-%E5%A3%BD%E5%8F%B8-%E5%88%BA%E8%BA%AB-r1124610/"
   },
   "google_local_knowledge_panel": {
-    "found": false,
-    "reason": "Saved HTML is DuckDuckGo search output, not a Google Search results page. The Google local knowledge panel (star rating and Google review count) is not present in this file.",
-    "detected_source": "duckduckgo_html"
+    "name": "合點壽司",
+    "rating": 4.3,
+    "rating_out_of": 5,
+    "review_count": 116,
+    "category": "Sushi restaurant",
+    "price_range_text": "$150–250",
+    "hours_status": null,
+    "place_fid": "0x3404010076adcd39:0x88f82d2d3cb67c0d"
   },
   "comparison_notes": {
     "openrice_smile_cry": "Counts of positive vs negative reaction votes on OpenRice.",

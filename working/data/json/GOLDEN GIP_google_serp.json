@@ -11,9 +11,14 @@
     "url": "https://www.openrice.com/zh/hongkong/r-golden-gip-%E4%B8%AD%E7%92%B0-%E9%9F%93%E5%9C%8B%E8%8F%9C-r893106/"
   },
   "google_local_knowledge_panel": {
-    "found": false,
-    "reason": "Saved HTML is DuckDuckGo search output, not a Google Search results page. The Google local knowledge panel (star rating and Google review count) is not present in this file.",
-    "detected_source": "duckduckgo_html"
+    "name": "GOLDEN GIP",
+    "rating": 4.2,
+    "rating_out_of": 5,
+    "review_count": 70,
+    "category": "Restaurant",
+    "price_range_text": null,
+    "hours_status": null,
+    "place_fid": "0x340401bfedf8a10b:0xe5906565a88cb028"
   },
   "comparison_notes": {
     "openrice_smile_cry": "Counts of positive vs negative reaction votes on OpenRice.",

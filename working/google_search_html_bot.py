@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
-Save Google web-search HTML for restaurant names (Chrome).
+Save Google web-search HTML for restaurant names (Chrome). By default files go to
+`working/web/` beside this script (see `--out-dir`).
 
 Use this when you need Google’s own results (e.g. links to Google Maps / review pages).
 DuckDuckGo is not used: it does not expose Google’s review UI or the same result set.
@@ -37,6 +38,19 @@ def safe_filename(name: str, max_len: int = 180) -> str:
     if len(out) > max_len:
         out = out[:max_len].rstrip(" .")
     return out or "unnamed"
+
+
+def write_html_file(path: Path, html: str) -> None:
+    """Write UTF-8 HTML atomically so a crash does not leave a truncated .html file."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    tmp = path.with_suffix(path.suffix + ".tmp")
+    try:
+        tmp.write_text(html, encoding="utf-8")
+        tmp.replace(path)
+    except Exception:
+        if tmp.exists():
+            tmp.unlink(missing_ok=True)
+        raise
 
 
 def google_search_url(query: str) -> str:
@@ -186,7 +200,11 @@ def main() -> None:
         "--out-dir",
         type=Path,
         default=Path(__file__).resolve().parent / "web",
-        help="Output directory (default: working/web).",
+        metavar="DIR",
+        help=(
+            "Directory for .html output (UTF-8). Default: the 'web' folder next to this script "
+            "(i.e. working/web). Relative paths are resolved against the current working directory."
+        ),
     )
     p.add_argument(
         "--query-suffix",
@@ -235,8 +253,9 @@ def main() -> None:
     if not names:
         p.error("Provide names or --from-csv.")
 
-    out_dir: Path = args.out_dir
+    out_dir: Path = args.out_dir.expanduser().resolve()
     out_dir.mkdir(parents=True, exist_ok=True)
+    print(f"Saving HTML to: {out_dir}", flush=True)
 
     if args.dry_run:
         for name in names:
@@ -270,12 +289,12 @@ def main() -> None:
                 continue
 
             if status == "ok":
-                out_path.write_text(html, encoding="utf-8")
+                write_html_file(out_path, html)
                 if blocked_path.exists():
                     blocked_path.unlink(missing_ok=True)
                 print(f"  wrote {out_path} ({len(html)} bytes)", flush=True)
             else:
-                blocked_path.write_text(html, encoding="utf-8")
+                write_html_file(blocked_path, html)
                 print(
                     f"  BLOCKED ({status}) — wrote {blocked_path.name}. "
                     "Try: do not pass --headless (visible Chrome is default), use --user-data-dir with a logged-in profile, "

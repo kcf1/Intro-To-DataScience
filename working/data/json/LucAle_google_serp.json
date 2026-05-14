@@ -11,9 +11,14 @@
     "url": "https://www.openrice.com/zh/hongkong/r-lucale-%E8%A5%BF%E7%92%B0-%E6%84%8F%E5%A4%A7%E5%88%A9%E8%8F%9C-%E6%97%A9%E5%8D%88%E9%A4%90-r1121883/"
   },
   "google_local_knowledge_panel": {
-    "found": false,
-    "reason": "Saved HTML is DuckDuckGo search output, not a Google Search results page. The Google local knowledge panel (star rating and Google review count) is not present in this file.",
-    "detected_source": "duckduckgo_html"
+    "name": "LucAle Tasting Italy",
+    "rating": 4.4,
+    "rating_out_of": 5,
+    "review_count": 431,
+    "category": "Italian restaurant",
+    "price_range_text": null,
+    "hours_status": "Closed",
+    "place_fid": "0x3403ff3422467d7b:0x5695ea6ba4d7990d"
   },
   "comparison_notes": {
     "openrice_smile_cry": "Counts of positive vs negative reaction votes on OpenRice.",

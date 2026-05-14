@@ -11,9 +11,14 @@
     "url": "https://www.openrice.com/zh/hongkong/r-double-black-%E5%8D%8A%E5%B1%B1-%E8%A5%BF%E5%BC%8F-all-day-breakfast-r791563/"
   },
   "google_local_knowledge_panel": {
-    "found": false,
-    "reason": "Saved HTML is DuckDuckGo search output, not a Google Search results page. The Google local knowledge panel (star rating and Google review count) is not present in this file.",
-    "detected_source": "duckduckgo_html"
+    "name": "Double Black",
+    "rating": 4.5,
+    "rating_out_of": 5,
+    "review_count": 180,
+    "category": "Coffee shop",
+    "price_range_text": "$100–200",
+    "hours_status": null,
+    "place_fid": "0x340401116b7d01e7:0xb79ef6dc9378f257"
   },
   "comparison_notes": {
     "openrice_smile_cry": "Counts of positive vs negative reaction votes on OpenRice.",

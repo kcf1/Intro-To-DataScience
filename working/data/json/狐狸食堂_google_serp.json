@@ -11,9 +11,14 @@
     "url": "https://www.openrice.com/zh/hongkong/r-%E7%8B%90%E7%8B%B8%E9%A3%9F%E5%A0%82-%E4%BD%90%E6%95%A6-%E6%97%A5%E6%9C%AC%E8%8F%9C-%E9%85%92-r787898/"
   },
   "google_local_knowledge_panel": {
-    "found": false,
-    "reason": "Saved HTML is DuckDuckGo search output, not a Google Search results page. The Google local knowledge panel (star rating and Google review count) is not present in this file.",
-    "detected_source": "duckduckgo_html"
+    "name": "狐狸食堂",
+    "rating": 4.9,
+    "rating_out_of": 5,
+    "review_count": 35,
+    "category": "Restaurant",
+    "price_range_text": "$150–450",
+    "hours_status": null,
+    "place_fid": "0x3404010dbf06c16d:0x8823af5223fc9e6a"
   },
   "comparison_notes": {
     "openrice_smile_cry": "Counts of positive vs negative reaction votes on OpenRice.",

@@ -11,9 +11,14 @@
     "url": "https://www.openrice.com/zh/hongkong/r-lola-maria-%E4%B8%8A%E7%92%B0-%E8%A5%BF%E7%8F%AD%E7%89%99%E8%8F%9C-r1117338/"
   },
   "google_local_knowledge_panel": {
-    "found": false,
-    "reason": "Saved HTML is DuckDuckGo search output, not a Google Search results page. The Google local knowledge panel (star rating and Google review count) is not present in this file.",
-    "detected_source": "duckduckgo_html"
+    "name": "LOLA MARÍA",
+    "rating": 4.7,
+    "rating_out_of": 5,
+    "review_count": 157,
+    "category": "Spanish restaurant",
+    "price_range_text": null,
+    "hours_status": null,
+    "place_fid": "0x340401c699d60319:0xae0b96525c7176e0"
   },
   "comparison_notes": {
     "openrice_smile_cry": "Counts of positive vs negative reaction votes on OpenRice.",

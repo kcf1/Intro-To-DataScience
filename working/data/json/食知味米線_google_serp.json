@@ -12,8 +12,8 @@
   },
   "google_local_knowledge_panel": {
     "found": false,
-    "reason": "Saved HTML is DuckDuckGo search output, not a Google Search results page. The Google local knowledge panel (star rating and Google review count) is not present in this file.",
-    "detected_source": "duckduckgo_html"
+    "reason": "This saved SERP has no Google local listing titled 食知味米線; the visible local-pack cards are other shops (e.g. 同湯米線 One Bowl Noodles Limited, 黔知味牛肉米線, 米線陣). Aggregate Google rating/review count for 食知味米線 is therefore not extractable from this HTML.",
+    "detected_source": "google_serp"
   },
   "comparison_notes": {
     "openrice_smile_cry": "Counts of positive vs negative reaction votes on OpenRice.",

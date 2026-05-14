@@ -11,9 +11,14 @@
     "url": "https://www.openrice.com/zh/hongkong/r-amalgamate-%E9%8A%85%E9%91%BC%E7%81%A3-%E8%A5%BF%E5%BC%8F-r1126706/"
   },
   "google_local_knowledge_panel": {
-    "found": false,
-    "reason": "Saved HTML is DuckDuckGo search output, not a Google Search results page. The Google local knowledge panel (star rating and Google review count) is not present in this file.",
-    "detected_source": "duckduckgo_html"
+    "name": "Amalgamate",
+    "rating": 4.3,
+    "rating_out_of": 5,
+    "review_count": 16,
+    "category": "Restaurant",
+    "price_range_text": null,
+    "hours_status": null,
+    "place_fid": "0x34040170840e89df:0xe06e24c6a6097e40"
   },
   "comparison_notes": {
     "openrice_smile_cry": "Counts of positive vs negative reaction votes on OpenRice.",

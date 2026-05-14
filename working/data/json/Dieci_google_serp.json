@@ -11,9 +11,14 @@
     "url": "https://www.openrice.com/zh/hongkong/r-dieci-%E4%B8%AD%E7%92%B0-%E6%84%8F%E5%A4%A7%E5%88%A9%E8%8F%9C-r1107202/"
   },
   "google_local_knowledge_panel": {
-    "found": false,
-    "reason": "Saved HTML is DuckDuckGo search output, not a Google Search results page. The Google local knowledge panel (star rating and Google review count) is not present in this file.",
-    "detected_source": "duckduckgo_html"
+    "name": "DIECI Hong Kong",
+    "rating": 4.7,
+    "rating_out_of": 5,
+    "review_count": 84,
+    "category": "Italian restaurant",
+    "price_range_text": null,
+    "hours_status": null,
+    "place_fid": "0x340401279e6dd973:0x9d38bd770c999a59"
   },
   "comparison_notes": {
     "openrice_smile_cry": "Counts of positive vs negative reaction votes on OpenRice.",

@@ -11,9 +11,14 @@
     "url": "https://www.openrice.com/zh/hongkong/r-%E5%AF%A7%E8%A8%98-%E4%BD%90%E6%95%A6-%E6%B3%B0%E5%9C%8B%E8%8F%9C-r1125293/"
   },
   "google_local_knowledge_panel": {
-    "found": false,
-    "reason": "Saved HTML is DuckDuckGo search output, not a Google Search results page. The Google local knowledge panel (star rating and Google review count) is not present in this file.",
-    "detected_source": "duckduckgo_html"
+    "name": "Ning Kee 寧記豬腳飯",
+    "rating": 4.6,
+    "rating_out_of": 5,
+    "review_count": 110,
+    "category": "餐廳",
+    "price_range_text": "$100–150",
+    "hours_status": null,
+    "place_fid": null
   },
   "comparison_notes": {
     "openrice_smile_cry": "Counts of positive vs negative reaction votes on OpenRice.",

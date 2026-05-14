@@ -11,9 +11,14 @@
     "url": "https://www.openrice.com/zh/hongkong/r-uncle-quek-%E4%B8%AD%E7%92%B0-%E6%96%B0%E5%8A%A0%E5%9D%A1%E8%8F%9C-r999408/"
   },
   "google_local_knowledge_panel": {
-    "found": false,
-    "reason": "Saved HTML is DuckDuckGo search output, not a Google Search results page. The Google local knowledge panel (star rating and Google review count) is not present in this file.",
-    "detected_source": "duckduckgo_html"
+    "name": "Uncle Quek",
+    "rating": 4.6,
+    "rating_out_of": 5,
+    "review_count": 167,
+    "category": "Southeast Asian restaurant",
+    "price_range_text": "$150–300",
+    "hours_status": null,
+    "place_fid": "0x3404013b7244e661:0x8f55d809be61a50a"
   },
   "comparison_notes": {
     "openrice_smile_cry": "Counts of positive vs negative reaction votes on OpenRice.",

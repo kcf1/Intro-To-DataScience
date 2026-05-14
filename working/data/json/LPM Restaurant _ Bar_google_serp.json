@@ -11,9 +11,14 @@
     "url": "https://www.openrice.com/zh/hongkong/r-lpm-restaurant-bar-%E4%B8%AD%E7%92%B0-%E6%B3%95%E5%9C%8B%E8%8F%9C-%E9%85%92-r665646/"
   },
   "google_local_knowledge_panel": {
-    "found": false,
-    "reason": "Saved HTML is DuckDuckGo search output, not a Google Search results page. The Google local knowledge panel (star rating and Google review count) is not present in this file.",
-    "detected_source": "duckduckgo_html"
+    "name": "La Petite Maison (LPM) Hong Kong",
+    "rating": 4.4,
+    "rating_out_of": 5,
+    "review_count": 638,
+    "category": "French restaurant",
+    "price_range_text": null,
+    "hours_status": null,
+    "place_fid": "0x340401f40f2c7a39:0x7b691f09213614e4"
   },
   "comparison_notes": {
     "openrice_smile_cry": "Counts of positive vs negative reaction votes on OpenRice.",

@@ -11,9 +11,14 @@
     "url": "https://www.openrice.com/zh/hongkong/r-milu-thai-%E0%B8%A1%E0%B8%B4%E0%B8%A5%E0%B8%B9%E0%B9%88%E0%B9%84%E0%B8%97%E0%B8%A2-%E9%8A%85%E9%91%BC%E7%81%A3-%E6%B3%B0%E5%9C%8B%E8%8F%9C-%E6%B5%B7%E9%AE%AE-r588815/"
   },
   "google_local_knowledge_panel": {
-    "found": false,
-    "reason": "Saved HTML is DuckDuckGo search output, not a Google Search results page. The Google local knowledge panel (star rating and Google review count) is not present in this file.",
-    "detected_source": "duckduckgo_html"
+    "name": "Milu Thai มิลู่ไทย (銅鑼灣)",
+    "rating": 4.2,
+    "rating_out_of": 5,
+    "review_count": 466,
+    "category": "Thai restaurant",
+    "price_range_text": "$200–400",
+    "hours_status": null,
+    "place_fid": "0x340401803b6b221b:0xaeb18cf6bee116c4"
   },
   "comparison_notes": {
     "openrice_smile_cry": "Counts of positive vs negative reaction votes on OpenRice.",

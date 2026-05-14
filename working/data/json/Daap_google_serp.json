@@ -11,9 +11,14 @@
     "url": "https://www.openrice.com/zh/hongkong/r-daap-%E4%B8%AD%E7%92%B0-%E5%A4%9A%E5%9C%8B%E8%8F%9C-r743858/"
   },
   "google_local_knowledge_panel": {
-    "found": false,
-    "reason": "Saved HTML is DuckDuckGo search output, not a Google Search results page. The Google local knowledge panel (star rating and Google review count) is not present in this file.",
-    "detected_source": "duckduckgo_html"
+    "name": "Daap",
+    "rating": 3.9,
+    "rating_out_of": 5,
+    "review_count": 279,
+    "category": "Restaurant",
+    "price_range_text": null,
+    "hours_status": null,
+    "place_fid": "0x340401b2e1b61d13:0x263f38751c129289"
   },
   "comparison_notes": {
     "openrice_smile_cry": "Counts of positive vs negative reaction votes on OpenRice.",

@@ -11,9 +11,14 @@
     "url": "https://www.openrice.com/zh/hongkong/r-%E7%BE%8E%E4%BA%BA%E6%BC%81%E6%B5%B7%E9%AE%AE%E7%81%AB%E9%8D%8B%E6%94%BE%E9%A1%8C-%E9%8A%85%E9%91%BC%E7%81%A3-%E6%B8%AF%E5%BC%8F-%E4%BB%BB%E9%A3%9F-%E6%94%BE%E9%A1%8C-r1031539/"
   },
   "google_local_knowledge_panel": {
-    "found": false,
-    "reason": "Saved HTML is DuckDuckGo search output, not a Google Search results page. The Google local knowledge panel (star rating and Google review count) is not present in this file.",
-    "detected_source": "duckduckgo_html"
+    "name": "美人漁海鮮火鍋放題 Mermaid Hotpot Buffet",
+    "rating": 4.8,
+    "rating_out_of": 5,
+    "review_count": 1102,
+    "category": "Restaurant",
+    "price_range_text": "$300–450",
+    "hours_status": null,
+    "place_fid": "0x3404013c78593e11:0xe10526ea309419bf"
   },
   "comparison_notes": {
     "openrice_smile_cry": "Counts of positive vs negative reaction votes on OpenRice.",

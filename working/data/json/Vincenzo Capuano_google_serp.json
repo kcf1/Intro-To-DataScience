@@ -11,9 +11,14 @@
     "url": "https://www.openrice.com/zh/hongkong/r-vincenzo-capuano-%E7%81%A3%E4%BB%94-%E6%84%8F%E5%A4%A7%E5%88%A9%E8%8F%9C-%E8%96%84%E9%A4%85-r1127468/"
   },
   "google_local_knowledge_panel": {
-    "found": false,
-    "reason": "Saved HTML is DuckDuckGo search output, not a Google Search results page. The Google local knowledge panel (star rating and Google review count) is not present in this file.",
-    "detected_source": "duckduckgo_html"
+    "name": "Pizzeria Vincenzo Capuano Wan Chai",
+    "rating": 4.6,
+    "rating_out_of": 5,
+    "review_count": 152,
+    "category": "Pizza restaurant",
+    "price_range_text": "$200–500",
+    "hours_status": null,
+    "place_fid": "0x3404012e748e6a25:0x878d4c2fdd34d8f5"
   },
   "comparison_notes": {
     "openrice_smile_cry": "Counts of positive vs negative reaction votes on OpenRice.",
