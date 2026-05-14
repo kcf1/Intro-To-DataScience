@@ -1,0 +1,22 @@
+{
+  "restaurant": "壽喜・關西",
+  "source_html": "working/web/壽喜・關西.html",
+  "openrice": {
+    "rank": 15,
+    "district": "尖沙咀",
+    "cuisine_tags": "日本菜 | 火鍋",
+    "smile": 208,
+    "cry": 3,
+    "bookmarks": "16.9K",
+    "url": "https://www.openrice.com/zh/hongkong/r-%E5%A3%BD%E5%96%9C%E3%83%BB%E9%97%9C%E8%A5%BF-%E5%B0%96%E6%B2%99%E5%92%80-%E6%97%A5%E6%9C%AC%E8%8F%9C-%E7%81%AB%E9%8D%8B-r890337/"
+  },
+  "google_local_knowledge_panel": {
+    "found": false,
+    "reason": "Saved HTML is DuckDuckGo search output, not a Google Search results page. The Google local knowledge panel (star rating and Google review count) is not present in this file.",
+    "detected_source": "duckduckgo_html"
+  },
+  "comparison_notes": {
+    "openrice_smile_cry": "Counts of positive vs negative reaction votes on OpenRice.",
+    "google_from_serp": "Overall star mean and total review count from the Google Search sidebar (same place as the Maps snippet). Individual review sentiment splits are not present in this saved HTML."
+  }
+}

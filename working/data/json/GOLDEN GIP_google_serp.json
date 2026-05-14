@@ -1,0 +1,22 @@
+{
+  "restaurant": "GOLDEN GIP",
+  "source_html": "working/web/GOLDEN GIP.html",
+  "openrice": {
+    "rank": 25,
+    "district": "中環",
+    "cuisine_tags": "韓國菜",
+    "smile": 17,
+    "cry": 4,
+    "bookmarks": "6K",
+    "url": "https://www.openrice.com/zh/hongkong/r-golden-gip-%E4%B8%AD%E7%92%B0-%E9%9F%93%E5%9C%8B%E8%8F%9C-r893106/"
+  },
+  "google_local_knowledge_panel": {
+    "found": false,
+    "reason": "Saved HTML is DuckDuckGo search output, not a Google Search results page. The Google local knowledge panel (star rating and Google review count) is not present in this file.",
+    "detected_source": "duckduckgo_html"
+  },
+  "comparison_notes": {
+    "openrice_smile_cry": "Counts of positive vs negative reaction votes on OpenRice.",
+    "google_from_serp": "Overall star mean and total review count from the Google Search sidebar (same place as the Maps snippet). Individual review sentiment splits are not present in this saved HTML."
+  }
+}

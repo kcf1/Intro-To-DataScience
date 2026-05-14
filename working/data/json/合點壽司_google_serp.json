@@ -1,0 +1,22 @@
+{
+  "restaurant": "合點壽司",
+  "source_html": "working/web/合點壽司.html",
+  "openrice": {
+    "rank": 18,
+    "district": "銅鑼灣",
+    "cuisine_tags": "日本菜 | 壽司/刺身",
+    "smile": 16,
+    "cry": 0,
+    "bookmarks": "4K",
+    "url": "https://www.openrice.com/zh/hongkong/r-%E5%90%88%E9%BB%9E%E5%A3%BD%E5%8F%B8-%E9%8A%85%E9%91%BC%E7%81%A3-%E6%97%A5%E6%9C%AC%E8%8F%9C-%E5%A3%BD%E5%8F%B8-%E5%88%BA%E8%BA%AB-r1124610/"
+  },
+  "google_local_knowledge_panel": {
+    "found": false,
+    "reason": "Saved HTML is DuckDuckGo search output, not a Google Search results page. The Google local knowledge panel (star rating and Google review count) is not present in this file.",
+    "detected_source": "duckduckgo_html"
+  },
+  "comparison_notes": {
+    "openrice_smile_cry": "Counts of positive vs negative reaction votes on OpenRice.",
+    "google_from_serp": "Overall star mean and total review count from the Google Search sidebar (same place as the Maps snippet). Individual review sentiment splits are not present in this saved HTML."
+  }
+}

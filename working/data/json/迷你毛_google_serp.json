@@ -1,0 +1,22 @@
+{
+  "restaurant": "迷你毛",
+  "source_html": "working/web/迷你毛.html",
+  "openrice": {
+    "rank": 28,
+    "district": "深水埗",
+    "cuisine_tags": "西式 | 甜品/糖水",
+    "smile": 411,
+    "cry": 18,
+    "bookmarks": "56K",
+    "url": "https://www.openrice.com/zh/hongkong/r-%E8%BF%B7%E4%BD%A0%E6%AF%9B-%E6%B7%B1%E6%B0%B4%E5%9F%97-%E8%A5%BF%E5%BC%8F-all-day-breakfast-r700414/"
+  },
+  "google_local_knowledge_panel": {
+    "found": false,
+    "reason": "Saved HTML is DuckDuckGo search output, not a Google Search results page. The Google local knowledge panel (star rating and Google review count) is not present in this file.",
+    "detected_source": "duckduckgo_html"
+  },
+  "comparison_notes": {
+    "openrice_smile_cry": "Counts of positive vs negative reaction votes on OpenRice.",
+    "google_from_serp": "Overall star mean and total review count from the Google Search sidebar (same place as the Maps snippet). Individual review sentiment splits are not present in this saved HTML."
+  }
+}

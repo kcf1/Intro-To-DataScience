@@ -1,0 +1,22 @@
+{
+  "restaurant": "Vincenzo Capuano",
+  "source_html": "working/web/Vincenzo Capuano.html",
+  "openrice": {
+    "rank": 6,
+    "district": "灣仔",
+    "cuisine_tags": "意大利菜 | 薄餅",
+    "smile": 2,
+    "cry": 1,
+    "bookmarks": "4K",
+    "url": "https://www.openrice.com/zh/hongkong/r-vincenzo-capuano-%E7%81%A3%E4%BB%94-%E6%84%8F%E5%A4%A7%E5%88%A9%E8%8F%9C-%E8%96%84%E9%A4%85-r1127468/"
+  },
+  "google_local_knowledge_panel": {
+    "found": false,
+    "reason": "Saved HTML is DuckDuckGo search output, not a Google Search results page. The Google local knowledge panel (star rating and Google review count) is not present in this file.",
+    "detected_source": "duckduckgo_html"
+  },
+  "comparison_notes": {
+    "openrice_smile_cry": "Counts of positive vs negative reaction votes on OpenRice.",
+    "google_from_serp": "Overall star mean and total review count from the Google Search sidebar (same place as the Maps snippet). Individual review sentiment splits are not present in this saved HTML."
+  }
+}

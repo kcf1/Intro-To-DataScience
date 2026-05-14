@@ -1,0 +1,22 @@
+{
+  "restaurant": "UURO (銅鑼灣廣場二期)",
+  "source_html": "working/web/UURO (銅鑼灣廣場二期).html",
+  "openrice": {
+    "rank": 3,
+    "district": "銅鑼灣",
+    "cuisine_tags": "意大利菜 | 三文治",
+    "smile": 37,
+    "cry": 2,
+    "bookmarks": "9K",
+    "url": "https://www.openrice.com/zh/hongkong/r-uuro-%E9%8A%85%E9%91%BC%E7%81%A3-%E8%A5%BF%E5%BC%8F-all-day-breakfast-r1118756/"
+  },
+  "google_local_knowledge_panel": {
+    "found": false,
+    "reason": "Saved HTML is DuckDuckGo search output, not a Google Search results page. The Google local knowledge panel (star rating and Google review count) is not present in this file. (DuckDuckGo anti-bot challenge page; no real results.)",
+    "detected_source": "duckduckgo_html"
+  },
+  "comparison_notes": {
+    "openrice_smile_cry": "Counts of positive vs negative reaction votes on OpenRice.",
+    "google_from_serp": "Overall star mean and total review count from the Google Search sidebar (same place as the Maps snippet). Individual review sentiment splits are not present in this saved HTML."
+  }
+}

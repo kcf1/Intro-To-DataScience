@@ -24,3 +24,65 @@ WARN 'Milu Thai มิลู่ไทย (亞士厘道)': response does not look
     DDG anomaly page; retry in 29s (2/6)
     DDG anomaly page; retry in 36s (3/6)
     DDG anomaly page; retry in 48s (4/6)
+    DDG anomaly page; retry in 58s (5/6)
+    DDG anomaly page; retry in 68s (6/6)
+WARN 'UURO (銅鑼灣廣場二期)': response does not look like DDG results; saving anyway.
+  wrote /Users/benkan45d6/GitHub/Intro-To-DataScience/working/web/UURO (銅鑼灣廣場二期).html (14270 bytes)
+[4/30] duckduckgo 'Tamarind'
+    DDG anomaly page; retry in 23s (1/6)
+    DDG anomaly page; retry in 33s (2/6)
+    DDG anomaly page; retry in 40s (3/6)
+    DDG anomaly page; retry in 47s (4/6)
+  wrote /Users/benkan45d6/GitHub/Intro-To-DataScience/working/web/Tamarind.html (29250 bytes)
+[5/30] duckduckgo '嚴湧帛'
+  wrote /Users/benkan45d6/GitHub/Intro-To-DataScience/working/web/嚴湧帛.html (40600 bytes)
+[6/30] duckduckgo 'Vincenzo Capuano'
+  wrote /Users/benkan45d6/GitHub/Intro-To-DataScience/working/web/Vincenzo Capuano.html (31805 bytes)
+[7/30] duckduckgo 'Milu Thai มิลู่ไทย (百樂中心)'
+  wrote /Users/benkan45d6/GitHub/Intro-To-DataScience/working/web/Milu Thai มิลู่ไทย (百樂中心).html (30667 bytes)
+[8/30] duckduckgo '寧記'
+  wrote /Users/benkan45d6/GitHub/Intro-To-DataScience/working/web/寧記.html (29922 bytes)
+[9/30] duckduckgo 'Dieci'
+  wrote /Users/benkan45d6/GitHub/Intro-To-DataScience/working/web/Dieci.html (31252 bytes)
+[10/30] duckduckgo '尚御潮滷居'
+  wrote /Users/benkan45d6/GitHub/Intro-To-DataScience/working/web/尚御潮滷居.html (31425 bytes)
+[11/30] duckduckgo '美人漁海鮮火鍋放題'
+  wrote /Users/benkan45d6/GitHub/Intro-To-DataScience/working/web/美人漁海鮮火鍋放題.html (31169 bytes)
+[12/30] duckduckgo '食知味米線'
+  wrote /Users/benkan45d6/GitHub/Intro-To-DataScience/working/web/食知味米線.html (30266 bytes)
+[13/30] duckduckgo 'LPM Restaurant & Bar'
+  wrote /Users/benkan45d6/GitHub/Intro-To-DataScience/working/web/LPM Restaurant _ Bar.html (30197 bytes)
+[14/30] duckduckgo 'Amalgamate'
+  wrote /Users/benkan45d6/GitHub/Intro-To-DataScience/working/web/Amalgamate.html (30248 bytes)
+[15/30] duckduckgo '壽喜・關西'
+  wrote /Users/benkan45d6/GitHub/Intro-To-DataScience/working/web/壽喜・關西.html (29322 bytes)
+[16/30] duckduckgo 'Double Black'
+  wrote /Users/benkan45d6/GitHub/Intro-To-DataScience/working/web/Double Black.html (30052 bytes)
+[17/30] duckduckgo '米真鮮 (通菜街)'
+  wrote /Users/benkan45d6/GitHub/Intro-To-DataScience/working/web/米真鮮 (通菜街).html (37163 bytes)
+[18/30] duckduckgo '合點壽司'
+  wrote /Users/benkan45d6/GitHub/Intro-To-DataScience/working/web/合點壽司.html (32099 bytes)
+[19/30] duckduckgo '美滋鍋 (家樂坊)'
+  wrote /Users/benkan45d6/GitHub/Intro-To-DataScience/working/web/美滋鍋 (家樂坊).html (32710 bytes)
+[20/30] duckduckgo 'Daap'
+  wrote /Users/benkan45d6/GitHub/Intro-To-DataScience/working/web/Daap.html (29276 bytes)
+[21/30] duckduckgo '肉屋扒房'
+  wrote /Users/benkan45d6/GitHub/Intro-To-DataScience/working/web/肉屋扒房.html (29732 bytes)
+[22/30] duckduckgo 'LucAle'
+  wrote /Users/benkan45d6/GitHub/Intro-To-DataScience/working/web/LucAle.html (29563 bytes)
+[23/30] duckduckgo '狐狸食堂'
+  wrote /Users/benkan45d6/GitHub/Intro-To-DataScience/working/web/狐狸食堂.html (36713 bytes)
+[24/30] duckduckgo 'LOLA MARÍA'
+  wrote /Users/benkan45d6/GitHub/Intro-To-DataScience/working/web/LOLA MARÍA.html (31302 bytes)
+[25/30] duckduckgo 'GOLDEN GIP'
+  wrote /Users/benkan45d6/GitHub/Intro-To-DataScience/working/web/GOLDEN GIP.html (29689 bytes)
+[26/30] duckduckgo '米青蛋包飯公司'
+  wrote /Users/benkan45d6/GitHub/Intro-To-DataScience/working/web/米青蛋包飯公司.html (31161 bytes)
+[27/30] duckduckgo '囍八方 (差館上街)'
+  wrote /Users/benkan45d6/GitHub/Intro-To-DataScience/working/web/囍八方 (差館上街).html (28755 bytes)
+[28/30] duckduckgo '迷你毛'
+  wrote /Users/benkan45d6/GitHub/Intro-To-DataScience/working/web/迷你毛.html (29963 bytes)
+[29/30] duckduckgo 'Uncle Quek'
+  wrote /Users/benkan45d6/GitHub/Intro-To-DataScience/working/web/Uncle Quek.html (29902 bytes)
+[30/30] duckduckgo '有團火叉燒事務所'
+  wrote /Users/benkan45d6/GitHub/Intro-To-DataScience/working/web/有團火叉燒事務所.html (30040 bytes)

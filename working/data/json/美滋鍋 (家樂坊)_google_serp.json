@@ -1,0 +1,22 @@
+{
+  "restaurant": "美滋鍋 (家樂坊)",
+  "source_html": "working/web/美滋鍋 (家樂坊).html",
+  "openrice": {
+    "rank": 19,
+    "district": "旺角",
+    "cuisine_tags": "港式 | 火鍋",
+    "smile": 1081,
+    "cry": 22,
+    "bookmarks": "87.7K",
+    "url": "https://www.openrice.com/zh/hongkong/r-%E7%BE%8E%E6%BB%8B%E9%8D%8B-%E6%97%BA%E8%A7%92-%E6%B8%AF%E5%BC%8F-%E4%BB%BB%E9%A3%9F-%E6%94%BE%E9%A1%8C-r618904/"
+  },
+  "google_local_knowledge_panel": {
+    "found": false,
+    "reason": "Saved HTML is DuckDuckGo search output, not a Google Search results page. The Google local knowledge panel (star rating and Google review count) is not present in this file.",
+    "detected_source": "duckduckgo_html"
+  },
+  "comparison_notes": {
+    "openrice_smile_cry": "Counts of positive vs negative reaction votes on OpenRice.",
+    "google_from_serp": "Overall star mean and total review count from the Google Search sidebar (same place as the Maps snippet). Individual review sentiment splits are not present in this saved HTML."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "restaurant": "Uncle Quek",
+  "source_html": "working/web/Uncle Quek.html",
+  "openrice": {
+    "rank": 29,
+    "district": "中環",
+    "cuisine_tags": "新加坡菜",
+    "smile": 7,
+    "cry": 1,
+    "bookmarks": "6K",
+    "url": "https://www.openrice.com/zh/hongkong/r-uncle-quek-%E4%B8%AD%E7%92%B0-%E6%96%B0%E5%8A%A0%E5%9D%A1%E8%8F%9C-r999408/"
+  },
+  "google_local_knowledge_panel": {
+    "found": false,
+    "reason": "Saved HTML is DuckDuckGo search output, not a Google Search results page. The Google local knowledge panel (star rating and Google review count) is not present in this file.",
+    "detected_source": "duckduckgo_html"
+  },
+  "comparison_notes": {
+    "openrice_smile_cry": "Counts of positive vs negative reaction votes on OpenRice.",
+    "google_from_serp": "Overall star mean and total review count from the Google Search sidebar (same place as the Maps snippet). Individual review sentiment splits are not present in this saved HTML."
+  }
+}

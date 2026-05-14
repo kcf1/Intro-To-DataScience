@@ -1,0 +1,22 @@
+{
+  "restaurant": "食知味米線",
+  "source_html": "working/web/食知味米線.html",
+  "openrice": {
+    "rank": 12,
+    "district": "太子",
+    "cuisine_tags": "滇菜 (雲南) | 粉麵/米線",
+    "smile": 3,
+    "cry": 1,
+    "bookmarks": "4K",
+    "url": "https://www.openrice.com/zh/hongkong/r-%E9%A3%9F%E7%9F%A5%E5%91%B3%E7%B1%B3%E7%B7%9A-%E5%A4%AA%E5%AD%90-%E6%BB%87%E8%8F%9C-%E9%9B%B2%E5%8D%97-%E7%B2%89%E9%BA%B5-%E7%B1%B3%E7%B7%9A-r900432/"
+  },
+  "google_local_knowledge_panel": {
+    "found": false,
+    "reason": "Saved HTML is DuckDuckGo search output, not a Google Search results page. The Google local knowledge panel (star rating and Google review count) is not present in this file.",
+    "detected_source": "duckduckgo_html"
+  },
+  "comparison_notes": {
+    "openrice_smile_cry": "Counts of positive vs negative reaction votes on OpenRice.",
+    "google_from_serp": "Overall star mean and total review count from the Google Search sidebar (same place as the Maps snippet). Individual review sentiment splits are not present in this saved HTML."
+  }
+}

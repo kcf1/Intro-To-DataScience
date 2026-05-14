@@ -1,0 +1,22 @@
+{
+  "restaurant": "LPM Restaurant & Bar",
+  "source_html": "working/web/LPM Restaurant _ Bar.html",
+  "openrice": {
+    "rank": 13,
+    "district": "中環",
+    "cuisine_tags": "法國菜 | 酒",
+    "smile": 129,
+    "cry": 8,
+    "bookmarks": "39K",
+    "url": "https://www.openrice.com/zh/hongkong/r-lpm-restaurant-bar-%E4%B8%AD%E7%92%B0-%E6%B3%95%E5%9C%8B%E8%8F%9C-%E9%85%92-r665646/"
+  },
+  "google_local_knowledge_panel": {
+    "found": false,
+    "reason": "Saved HTML is DuckDuckGo search output, not a Google Search results page. The Google local knowledge panel (star rating and Google review count) is not present in this file.",
+    "detected_source": "duckduckgo_html"
+  },
+  "comparison_notes": {
+    "openrice_smile_cry": "Counts of positive vs negative reaction votes on OpenRice.",
+    "google_from_serp": "Overall star mean and total review count from the Google Search sidebar (same place as the Maps snippet). Individual review sentiment splits are not present in this saved HTML."
+  }
+}

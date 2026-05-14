@@ -1,0 +1,22 @@
+{
+  "restaurant": "Milu Thai มิลู่ไทย (百樂中心)",
+  "source_html": "working/web/Milu Thai มิลู่ไทย (百樂中心).html",
+  "openrice": {
+    "rank": 7,
+    "district": "銅鑼灣",
+    "cuisine_tags": "泰國菜 | 海鮮",
+    "smile": 1529,
+    "cry": 15,
+    "bookmarks": "159.6K",
+    "url": "https://www.openrice.com/zh/hongkong/r-milu-thai-%E0%B8%A1%E0%B8%B4%E0%B8%A5%E0%B8%B9%E0%B9%88%E0%B9%84%E0%B8%97%E0%B8%A2-%E9%8A%85%E9%91%BC%E7%81%A3-%E6%B3%B0%E5%9C%8B%E8%8F%9C-%E6%B5%B7%E9%AE%AE-r588815/"
+  },
+  "google_local_knowledge_panel": {
+    "found": false,
+    "reason": "Saved HTML is DuckDuckGo search output, not a Google Search results page. The Google local knowledge panel (star rating and Google review count) is not present in this file.",
+    "detected_source": "duckduckgo_html"
+  },
+  "comparison_notes": {
+    "openrice_smile_cry": "Counts of positive vs negative reaction votes on OpenRice.",
+    "google_from_serp": "Overall star mean and total review count from the Google Search sidebar (same place as the Maps snippet). Individual review sentiment splits are not present in this saved HTML."
+  }
+}

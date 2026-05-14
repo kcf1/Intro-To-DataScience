@@ -1,0 +1,22 @@
+{
+  "restaurant": "米青蛋包飯公司",
+  "source_html": "working/web/米青蛋包飯公司.html",
+  "openrice": {
+    "rank": 26,
+    "district": "荔枝角",
+    "cuisine_tags": "港式",
+    "smile": 55,
+    "cry": 8,
+    "bookmarks": "10.9K",
+    "url": "https://www.openrice.com/zh/hongkong/r-%E7%B1%B3%E9%9D%92%E8%9B%8B%E5%8C%85%E9%A3%AF%E5%85%AC%E5%8F%B8-%E8%8D%94%E6%9E%9D%E8%A7%92-%E6%B8%AF%E5%BC%8F-r881096/"
+  },
+  "google_local_knowledge_panel": {
+    "found": false,
+    "reason": "Saved HTML is DuckDuckGo search output, not a Google Search results page. The Google local knowledge panel (star rating and Google review count) is not present in this file.",
+    "detected_source": "duckduckgo_html"
+  },
+  "comparison_notes": {
+    "openrice_smile_cry": "Counts of positive vs negative reaction votes on OpenRice.",
+    "google_from_serp": "Overall star mean and total review count from the Google Search sidebar (same place as the Maps snippet). Individual review sentiment splits are not present in this saved HTML."
+  }
+}

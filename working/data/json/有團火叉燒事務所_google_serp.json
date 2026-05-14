@@ -1,0 +1,22 @@
+{
+  "restaurant": "有團火叉燒事務所",
+  "source_html": "working/web/有團火叉燒事務所.html",
+  "openrice": {
+    "rank": 30,
+    "district": "新蒲崗",
+    "cuisine_tags": "粵菜 (廣東) | 燒臘",
+    "smile": 20,
+    "cry": 1,
+    "bookmarks": "4K",
+    "url": "https://www.openrice.com/zh/hongkong/r-%E6%9C%89%E5%9C%98%E7%81%AB%E5%8F%89%E7%87%92%E4%BA%8B%E5%8B%99%E6%89%80-%E6%96%B0%E8%92%B2%E5%B4%97-%E7%B2%B5%E8%8F%9C-%E5%BB%A3%E6%9D%B1-%E7%87%92%E8%87%98-r995544/"
+  },
+  "google_local_knowledge_panel": {
+    "found": false,
+    "reason": "Saved HTML is DuckDuckGo search output, not a Google Search results page. The Google local knowledge panel (star rating and Google review count) is not present in this file.",
+    "detected_source": "duckduckgo_html"
+  },
+  "comparison_notes": {
+    "openrice_smile_cry": "Counts of positive vs negative reaction votes on OpenRice.",
+    "google_from_serp": "Overall star mean and total review count from the Google Search sidebar (same place as the Maps snippet). Individual review sentiment splits are not present in this saved HTML."
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "restaurant": "集眾菜館",
+  "source_html": "working/web/集眾菜館.html",
+  "openrice": {
+    "rank": 1,
+    "district": "太子",
+    "cuisine_tags": "粵菜 (廣東)",
+    "smile": 110,
+    "cry": 16,
+    "bookmarks": "16.7K",
+    "url": "https://www.openrice.com/zh/hongkong/r-%E9%9B%86%E7%9C%BE%E8%8F%9C%E9%A4%A8-%E5%A4%AA%E5%AD%90-%E7%B2%B5%E8%8F%9C-%E5%BB%A3%E6%9D%B1-r631804/"
+  },
+  "google_local_knowledge_panel": {
+    "name": "集眾菜館",
+    "rating": 3.7,
+    "rating_out_of": 5,
+    "review_count": 296,
+    "category": "Chinese restaurant",
+    "price_range_text": "$200–250",
+    "hours_status": "Closed",
+    "place_fid": "0x34040163cb081259:0xba7489cf53b44b59"
+  },
+  "comparison_notes": {
+    "openrice_smile_cry": "Counts of positive vs negative reaction votes on OpenRice.",
+    "google_from_serp": "Overall star mean and total review count from the Google Search sidebar (same place as the Maps snippet). Individual review sentiment splits are not present in this saved HTML."
+  }
+}
