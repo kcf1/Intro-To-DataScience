@@ -10,7 +10,7 @@ instead a .blocked.html sidecar is written and the run reports BLOCKED for that 
 
 Requires: Chrome; `pip install -r requirements-selenium-google.txt` (undetected-chromedriver recommended).
 
-By default the browser window is visible and the script waits ~5s after each results page loads
+By default the browser window is visible and the script waits ~3s after each results page loads
 (`--settle`); use `--headless` only if you explicitly want no window.
 """
 
@@ -196,19 +196,19 @@ def main() -> None:
     p.add_argument(
         "--delay-min",
         type=float,
-        default=5.0,
+        default=3.0,
         help="Min seconds between restaurant queries (after saving HTML).",
     )
     p.add_argument(
         "--delay-max",
         type=float,
-        default=7.0,
+        default=3.0,
         help="Max seconds between restaurant queries (after saving HTML).",
     )
     p.add_argument(
         "--settle",
         type=float,
-        default=5.0,
+        default=3.0,
         help="Seconds to wait after opening the Google results URL so the page can load.",
     )
     p.add_argument(

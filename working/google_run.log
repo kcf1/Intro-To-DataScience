@@ -1,0 +1,65 @@
+/Users/benkan45d6/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+WARN: uc.Chrome(options=...) failed (Binary Location Must be a String); trying bare uc.Chrome().
+WARN: uc.Chrome() failed (Binary Location Must be a String); using stock Chrome.
+Chrome: visible window (default). Use --headless to hide it.
+[1/30] google '集眾菜館'
+  wrote web/集眾菜館.html (1092642 bytes)
+[2/30] google 'Milu Thai มิลู่ไทย (亞士厘道)'
+  wrote web/Milu Thai มิลู่ไทย (亞士厘道).html (1142370 bytes)
+[3/30] google 'UURO (銅鑼灣廣場二期)'
+  wrote web/UURO (銅鑼灣廣場二期).html (1313377 bytes)
+[4/30] google 'Tamarind'
+  wrote web/Tamarind.html (1109304 bytes)
+[5/30] google '嚴湧帛'
+  wrote web/嚴湧帛.html (912954 bytes)
+[6/30] google 'Vincenzo Capuano'
+  wrote web/Vincenzo Capuano.html (875707 bytes)
+[7/30] google 'Milu Thai มิลู่ไทย (百樂中心)'
+  wrote web/Milu Thai มิลู่ไทย (百樂中心).html (1293561 bytes)
+[8/30] google '寧記'
+  wrote web/寧記.html (1199205 bytes)
+[9/30] google 'Dieci'
+  wrote web/Dieci.html (1178732 bytes)
+[10/30] google '尚御潮滷居'
+  wrote web/尚御潮滷居.html (1048831 bytes)
+[11/30] google '美人漁海鮮火鍋放題'
+  wrote web/美人漁海鮮火鍋放題.html (1158631 bytes)
+[12/30] google '食知味米線'
+  wrote web/食知味米線.html (1742943 bytes)
+[13/30] google 'LPM Restaurant & Bar'
+  wrote web/LPM Restaurant _ Bar.html (1603193 bytes)
+[14/30] google 'Amalgamate'
+  wrote web/Amalgamate.html (1143535 bytes)
+[15/30] google '壽喜・關西'
+  wrote web/壽喜・關西.html (1252024 bytes)
+[16/30] google 'Double Black'
+  wrote web/Double Black.html (857234 bytes)
+[17/30] google '米真鮮 (通菜街)'
+  wrote web/米真鮮 (通菜街).html (985225 bytes)
+[18/30] google '合點壽司'
+  wrote web/合點壽司.html (1236139 bytes)
+[19/30] google '美滋鍋 (家樂坊)'
+  wrote web/美滋鍋 (家樂坊).html (1214900 bytes)
+[20/30] google 'Daap'
+  wrote web/Daap.html (1169626 bytes)
+[21/30] google '肉屋扒房'
+  wrote web/肉屋扒房.html (932328 bytes)
+[22/30] google 'LucAle'
+  wrote web/LucAle.html (1343801 bytes)
+[23/30] google '狐狸食堂'
+  wrote web/狐狸食堂.html (926957 bytes)
+[24/30] google 'LOLA MARÍA'
+  wrote web/LOLA MARÍA.html (1219599 bytes)
+[25/30] google 'GOLDEN GIP'
+  wrote web/GOLDEN GIP.html (978994 bytes)
+[26/30] google '米青蛋包飯公司'
+  wrote web/米青蛋包飯公司.html (1073514 bytes)
+[27/30] google '囍八方 (差館上街)'
+  wrote web/囍八方 (差館上街).html (1042513 bytes)
+[28/30] google '迷你毛'
+  wrote web/迷你毛.html (1286729 bytes)
+[29/30] google 'Uncle Quek'
+  wrote web/Uncle Quek.html (1104018 bytes)
+[30/30] google '有團火叉燒事務所'
+  wrote web/有團火叉燒事務所.html (1084587 bytes)

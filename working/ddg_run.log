@@ -8,3 +8,19 @@ DDG: warmup GET ok
     DDG anomaly page; retry in 51s (4/6)
     DDG anomaly page; retry in 58s (5/6)
     DDG anomaly page; retry in 67s (6/6)
+WARN '集眾菜館': response does not look like DDG results; saving anyway.
+  wrote /Users/benkan45d6/GitHub/Intro-To-DataScience/working/web/集眾菜館.html (14268 bytes)
+[2/30] duckduckgo 'Milu Thai มิลู่ไทย (亞士厘道)'
+    DDG anomaly page; retry in 19s (1/6)
+    DDG anomaly page; retry in 26s (2/6)
+    DDG anomaly page; retry in 41s (3/6)
+    DDG anomaly page; retry in 50s (4/6)
+    DDG anomaly page; retry in 60s (5/6)
+    DDG anomaly page; retry in 67s (6/6)
+WARN 'Milu Thai มิลู่ไทย (亞士厘道)': response does not look like DDG results; saving anyway.
+  wrote /Users/benkan45d6/GitHub/Intro-To-DataScience/working/web/Milu Thai มิลู่ไทย (亞士厘道).html (14310 bytes)
+[3/30] duckduckgo 'UURO (銅鑼灣廣場二期)'
+    DDG anomaly page; retry in 19s (1/6)
+    DDG anomaly page; retry in 29s (2/6)
+    DDG anomaly page; retry in 36s (3/6)
+    DDG anomaly page; retry in 48s (4/6)
